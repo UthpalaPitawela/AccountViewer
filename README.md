@@ -1,7 +1,7 @@
 # Account Viewer
 
 ### Versions
-Angular 13__
+Angular 13--
 Asp.net 7
 
 ## Run the angular app
