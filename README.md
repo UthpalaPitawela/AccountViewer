@@ -3,6 +3,8 @@
 ## Run the angular app
 
 ```
-cd angularapp
+npm install
 ```
-
+```
+ng serve
+```
