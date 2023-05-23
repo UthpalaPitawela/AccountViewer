@@ -1,1 +1,8 @@
-# Solution1
+# Account Viewer
+
+## Run the angular app
+````
+```
+cd angularapp
+```
+````
