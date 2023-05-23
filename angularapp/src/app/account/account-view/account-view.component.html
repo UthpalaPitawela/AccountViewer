@@ -1,0 +1,23 @@
+
+<h1>Account Details Display View</h1>
+<table>
+  <tr>
+    <th>Month</th>
+    <th>R And D Expenses</th>
+    <th>Canteen Expenses</th>
+    <th>CEOCar Expenses</th>
+    <th>Marketing Expenses</th>
+    <th>Parking Expenses</th>
+    
+  </tr>
+  <tr *ngFor="let data of accountData">
+    <td>{{data.month}}</td>
+    <td>{{data.randD}}</td>
+    <td>{{data.canteen}}</td>
+    <td>{{data.ceoCar}}</td>
+    <td>{{data.marketing}}</td>
+    <td>{{data.parking}}</td>
+
+  </tr>
+
+</table>

@@ -1,0 +1,25 @@
+//const proxy_config = [
+//  {
+//    context: [
+//      "/accounts/*",
+//    ],
+//    target: 'http://localhost:5233',
+//    secure: false
+//  }
+//]
+
+//module.exports = proxy_config;
+
+
+{
+  "/accounts/*": {
+    "target": "http://localhost:5233",
+    "secure": false,
+    "loglevel": "debug"
+  },
+  //"/weatherforecast": {
+  //  "target": "http://localhost:1000",
+  //  "secure": false,
+  //  "loglevel": "debug"
+  //}
+}
