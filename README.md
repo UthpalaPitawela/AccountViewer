@@ -1,7 +1,7 @@
 # Account Viewer
 
 ### Versions
-Angular 13--
+Angular 13<br/>
 Asp.net 7
 
 ## Run the angular app
@@ -17,3 +17,8 @@ ng serve
 ```
 dotnet run
 ```
+
+### Completed functionalities
+Excel Upload: http://localhost:4200/account-upload <br/>
+Account Data View: http://localhost:4200/account-view <br/>
+
