@@ -75,3 +75,6 @@ C:\Users\UthpalaP\source\repos\Solution1\webapi\bin\Debug\net7.0\System.Net.Http
 C:\Users\UthpalaP\source\repos\Solution1\webapi\bin\Debug\net7.0\Newtonsoft.Json.dll
 C:\Users\UthpalaP\source\repos\Solution1\webapi\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll
 C:\Users\UthpalaP\source\repos\Solution1\webapi\obj\Debug\net7.0\webapi.csproj.ResolveComReference.cache
+C:\Users\UthpalaP\source\repos\Solution1\webapi\bin\Debug\net7.0\AutoMapper.dll
+C:\Users\UthpalaP\source\repos\Solution1\webapi\bin\Debug\net7.0\BCrypt.Net-Next.dll
+C:\Users\UthpalaP\source\repos\Solution1\webapi\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

@@ -1,5 +1,7 @@
 using AccountBalanceViewer.Models;
+//using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using webapi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
@@ -12,6 +14,18 @@ builder.Services.AddDbContext<AccountContext>(options => options.UseSqlite(conne
 builder.Logging.ClearProviders();
 builder.Logging.AddConsole();
 builder.Services.AddControllers();
+
+
+
+// Auto Mapper Configurations
+//builder.Services.AddAutoMapper(typeof(AuthenticateResponse))
+//// Auto Mapper Configurations
+//var mapperConfig = new MapperConfiguration(mc =>
+//{
+//    mc.AddProfile(new MappingProfile());
+//});
+
+//IMapper mapper = mapperConfig.CreateMapper();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
