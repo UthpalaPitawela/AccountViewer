@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\UthpalaP\\source\\repos\\Solution1\\webapi\\webapi.csproj": {}
+    "D:\\Adra\\final\\AccountViewer\\webapi\\webapi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\UthpalaP\\source\\repos\\Solution1\\webapi\\webapi.csproj": {
+    "D:\\Adra\\final\\AccountViewer\\webapi\\webapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\UthpalaP\\source\\repos\\Solution1\\webapi\\webapi.csproj",
+        "projectUniqueName": "D:\\Adra\\final\\AccountViewer\\webapi\\webapi.csproj",
         "projectName": "webapi",
-        "projectPath": "C:\\Users\\UthpalaP\\source\\repos\\Solution1\\webapi\\webapi.csproj",
+        "projectPath": "D:\\Adra\\final\\AccountViewer\\webapi\\webapi.csproj",
         "packagesPath": "C:\\Users\\UthpalaP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\UthpalaP\\source\\repos\\Solution1\\webapi\\obj\\",
+        "outputPath": "D:\\Adra\\final\\AccountViewer\\webapi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\UthpalaP\\AppData\\Roaming\\NuGet\\NuGet.Config",

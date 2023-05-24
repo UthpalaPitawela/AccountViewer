@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BZZa2EFJ6YsilRvmD8hY6Fb19PDdOsEWdngasNjLz4WTQr3LxpljeLB7nhpIYag0g+Wrt0dZIKW9qA3fDnKl9Q==",
+  "dgSpecHash": "cobr/MAtL1QoLBngoNt5mNfEbhwP91mqJJWgAOCivFtGy1C4hE116VVJ/8yKYqPhgpiW8eQohuN5FMB1ApY+Uw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\UthpalaP\\source\\repos\\Solution1\\webapi\\webapi.csproj",
+  "projectFilePath": "D:\\Adra\\final\\AccountViewer\\webapi\\webapi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\UthpalaP\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\UthpalaP\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
