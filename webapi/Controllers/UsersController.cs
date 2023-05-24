@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using webapi.Models;
-using webapi.Services;
 using BCrypt.Net;
 namespace MyReadingList.WebAPI.Controllers
 {
