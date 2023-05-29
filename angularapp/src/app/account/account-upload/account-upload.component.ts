@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { AccountService } from '../../services/account.service';
 import * as XLSX from "xlsx"
+import { AccountService } from '../../../services/account/account.service';
 
 @Component({
   selector: 'app-account-upload',
@@ -10,8 +10,8 @@ import * as XLSX from "xlsx"
 export class AccountUploadComponent  {
   @ViewChild('fileInput') fileInput: any; 
   message: any;
-  fileToUpload?: File |null;
-  constructor(private accountService: AccountService) {
+    fileToUpload?: File | null;
+    constructor(private accountService: AccountService) {
 
   }
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AccountService } from '../../services/account.service';
+import { AccountService } from '../../../services/account/account.service';
 
 @Component({
   selector: 'app-account-view',
@@ -7,8 +7,8 @@ import { AccountService } from '../../services/account.service';
   styleUrls: ['./account-view.component.css']
 })
 export class AccountViewComponent implements OnInit {
-  accountData: any;
-  constructor(public accountService: AccountService) {
+    accountData: any;
+    constructor(public accountService: AccountService) {
   }
   ngOnInit() {
     this.accountService.getAccountDetails().subscribe((res: any) => {

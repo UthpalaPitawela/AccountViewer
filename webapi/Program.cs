@@ -1,7 +1,10 @@
 using AccountBalanceViewer.Models;
+using AutoMapper;
 //using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using webapi.Helpers;
 using webapi.Models;
+using webApi.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
@@ -19,13 +22,8 @@ builder.Services.AddControllers();
 
 // Auto Mapper Configurations
 //builder.Services.AddAutoMapper(typeof(AuthenticateResponse))
-//// Auto Mapper Configurations
-//var mapperConfig = new MapperConfiguration(mc =>
-//{
-//    mc.AddProfile(new MappingProfile());
-//});
 
-//IMapper mapper = mapperConfig.CreateMapper();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -37,6 +35,20 @@ builder.Services.AddCors(options =>
                           policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
                       });
 });
+
+// configure automapper with all automapper profiles from this assembly
+var mappingConfig = new MapperConfiguration(mc =>
+{
+    mc.AddProfile(new MappingProfile());
+});
+
+IMapper mapper = mappingConfig.CreateMapper();
+builder.Services.AddSingleton(mapper);
+// configure strongly typed settings object
+builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
+
+// configure DI for application services
+builder.Services.AddScoped<IJwtUtils, JwtUtils>();
 builder.Logging.ClearProviders();
 
 var app = builder.Build();

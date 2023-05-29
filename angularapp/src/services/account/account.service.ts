@@ -18,16 +18,10 @@ export class AccountService {
     return this.http.get(
       this._baseUrl+ '/read'
     );
-    //this.http.get(this._baseUrl)
-    //  .toPromise()
-    //  .then(res => this.list = res as Account[]);
+  
   }
 
   uploadAccountDetails(details: []) {
-    //const data = {
-    //  details: details
-    //}
-    //console.log("=============details", data)
     return this.http.post(this._baseUrl + '/create', details)  
   }
 }

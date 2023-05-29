@@ -1,10 +1,11 @@
 ﻿using AccountBalanceViewer.Models;
+using AutoMapper;
 //using AutoMapper;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using webapi.Models;
-using BCrypt.Net;
+using webApi.Authorization;
+
 namespace MyReadingList.WebAPI.Controllers
 {
     [ApiController]
@@ -13,33 +14,35 @@ namespace MyReadingList.WebAPI.Controllers
     public class UsersController : Controller
     {
         private UserContext _context;
-        //private readonly IMapper _mapper;
-        public UsersController(UserContext context)
+        private IJwtUtils _jwtUtils;
+        private IMapper _mapper;
+        public UsersController(UserContext context, IJwtUtils jwtUtils, IMapper mapper)
 
         {
             _context = context;
-            //_mapper = mapper;
+            _jwtUtils = jwtUtils;
+            _mapper = mapper;
         }
 
         //Get account details
 
         [HttpPost("authenticate")]
-        public async Task<ActionResult<User>> Authenticate(AuthenticateRequest authRequest)
+        public async Task<ActionResult<AuthenticateResponse>> Authenticate(AuthenticateRequest authRequest)
         {
             var user = _context.User.SingleOrDefault(x => x.Username == authRequest.Username);
 
-            // validate
-            //if (user == null || !BCrypt.Net.BCrypt.Verify(authRequest.Password, user.Password))
-            //    throw new Exception("Username or password is incorrect");
+            
             string salt = BCrypt.Net.BCrypt.GenerateSalt();
             string passwordHash = BCrypt.Net.BCrypt.HashPassword(authRequest.Password, salt);
-            //bool correctPassword = BCrypt.Net.BCrypt.Verify(passwordHash, storedPassword);
             if (user == null || !BCrypt.Net.BCrypt.Verify(user.Password,passwordHash))
                 throw new Exception("Username or password is incorrect");
 
             // authentication successful
-            //AuthenticateResponse response = _mapper.Map<AuthenticateResponse>(user);
-            return user;
+
+            var response = _mapper.Map<AuthenticateResponse>(user);
+            response.Token = _jwtUtils.GenerateToken(user);
+
+            return response;
         }
     }
 }
