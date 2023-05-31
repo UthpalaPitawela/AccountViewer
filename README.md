@@ -18,7 +18,17 @@ ng serve
 dotnet run
 ```
 
+
 ### Completed functionalities
-Excel Upload: http://localhost:4200/account-upload <br/>
-Account Data View: http://localhost:4200/account-view <br/>
+
+There exist 2 users: <br/>
+* Admin <br/>
+ username: admin <br/>
+ password: 123 <br/>
+* User <br/>
+  username: user <br/>
+  password: 456 <br/>
+  
+As per the requirement onky admin can access account uploads section while normal user can access only account view section.
+
 
