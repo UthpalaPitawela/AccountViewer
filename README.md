@@ -29,6 +29,6 @@ There exist 2 users: <br/>
   username: user <br/>
   password: 456 <br/>
   
-As per the requirement onky admin can access account uploads section while normal user can access only account view section.
+As per the requirement only admin can access account uploads section while normal user can access only account view section.
 
 
