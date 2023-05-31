@@ -19,7 +19,7 @@ dotnet run
 ```
 
 
-### Completed functionalities
+### How to use
 
 There exist 2 users: <br/>
 * Admin <br/>
