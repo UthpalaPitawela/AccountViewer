@@ -23,10 +23,8 @@ export class AccountUploadComponent  {
     fileReader.onload = (event: any) => {
       let binaryData = event.target.result;
       let workbook = XLSX.read(binaryData, { type: 'binary' })
-      console.log("workbook", workbook)
       workbook.SheetNames.forEach(sheet => {
         data = XLSX.utils.sheet_to_json(workbook.Sheets[sheet])
-        console.log("data",data)
         this.accountService.uploadAccountDetails(data).subscribe(result => {
           console.log(result)
       })

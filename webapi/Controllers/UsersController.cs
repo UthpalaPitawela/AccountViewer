@@ -31,7 +31,7 @@ namespace MyReadingList.WebAPI.Controllers
         {
             var user = _context.User.SingleOrDefault(x => x.Username == authRequest.Username);
 
-            
+
             string salt = BCrypt.Net.BCrypt.GenerateSalt();
             string passwordHash = BCrypt.Net.BCrypt.HashPassword(authRequest.Password, salt);
             if (user == null || !BCrypt.Net.BCrypt.Verify(user.Password,passwordHash))

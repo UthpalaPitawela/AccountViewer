@@ -14,7 +14,6 @@ export class AccountViewComponent implements OnInit {
     this.accountService.getAccountDetails().subscribe((res: any) => {
       if (res) {
         this.accountData = res;
-        console.log("res", res)
       }
 
     })

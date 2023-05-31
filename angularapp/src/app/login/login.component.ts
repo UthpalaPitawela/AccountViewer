@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, NgForm } from '@angular/forms';
 import { AuthService } from '../../services/auth/auth.service';
 import { User } from '../../models/user.model';
+import { Router } from '@angular/router';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -10,21 +12,24 @@ import { User } from '../../models/user.model';
 })
 export class LoginComponent {
   user: User;
-  constructor(public authService: AuthService) {
+  isLogin = false;
+
+  roleAs: string = '';
+  constructor(public authService: AuthService, private router: Router) {
   this.user = new User('','');
   }
 
 
 
   login(form: NgForm) {
-    console.log(form.value)
-    this.authService.authenticateUser(form.value).subscribe((res: any) => {
-      if (res) {
-        //this.accountData = res;
-        console.log("res", res)
+    this.authService.authenticateUser(form.value).subscribe((result: any) => {
+      if (result && this.authService.isLoggedIn()) {
+        if (this.authService.getRole() === 'admin') {
+          this.router.navigate(['/account-upload'])
+        } else {
+          this.router.navigate(['/account-view'])
+        }
       }
-
     })
   }
-  
 }

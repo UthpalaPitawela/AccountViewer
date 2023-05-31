@@ -10,6 +10,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing-.module';
 import { FormsModule } from '@angular/forms';
+import { AuthService } from '../services/auth/auth.service';
+import { AuthorizationGuardService, authorizationGuard } from './authorization.guard';
 
 
 @NgModule({
@@ -31,7 +33,10 @@ import { FormsModule } from '@angular/forms';
     //  { path: 'account-view', component: AccountViewComponent },
     //]),
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    AuthorizationGuardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
