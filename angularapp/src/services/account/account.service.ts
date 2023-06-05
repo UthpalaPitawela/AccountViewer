@@ -9,10 +9,10 @@ import { HttpHeaders } from '@angular/common/http';
 })
 export class AccountService {
   list: Account[] = [];
+  readonly _baseUrl = 'http://localhost:5233/accounts';
 
   constructor(private http: HttpClient) {
   }
-  readonly _baseUrl = 'http://localhost:5233/accounts';
 
   getAccountDetails() {
     return this.http.get(
